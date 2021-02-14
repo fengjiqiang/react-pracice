@@ -1,20 +1,22 @@
 module.exports = {
   env: {
     browser: true,
+    node: true,
     es2021: true,
     es6: true,
   },
   extends: [
+    'eslint:recommended',
     'plugin:react/recommended',
     'airbnb',
   ],
-  parser: 'babel-eslint',
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
     },
     ecmaVersion: 12,
     sourceType: 'module',
+    parser: 'babel-eslint',
   },
   plugins: [
     'react',
@@ -79,7 +81,7 @@ module.exports = {
     'react/jsx-no-literals': 0, // 防止使用未包装的JSX字符串
     'react/jsx-no-undef': 1, // 在JSX中禁止未声明的变量
     'react/jsx-pascal-case': 0, // 为用户定义的JSX组件强制使用PascalCase
-    'react/jsx-uses-react': 1, // 防止反应被错误地标记为未使用
+    'react/jsx-uses-react': 2, // 防止反应被错误地标记为未使用
     'react/jsx-uses-vars': 2, // 防止在JSX中使用的变量被错误地标记为未使用
     'react/no-danger': 0, // 防止使用危险的JSX属性
     'react/no-did-mount-set-state': 0, // 防止在componentDidMount中使用setState
@@ -104,6 +106,10 @@ module.exports = {
     'no-mixed-spaces-and-tabs': 0, // 禁止混用tab和空格
     'prefer-arrow-callback': 0, // 比较喜欢箭头回调
     'react/prefer-stateless-function': [0, { ignorePureComponents: false }],
+    'react/state-in-constructor': 0,
+    'react/static-property-placement': 0,
+    'react/jsx-props-no-spreading': 0,
+    'react/destructuring-assignment': 0,
 
     //
     // ES6.相关 //
@@ -119,6 +125,22 @@ module.exports = {
     'prefer-template': 0, // 要求使用模板字面量而非字符串连接
   },
   settings: {
+    react: {
+      createClass: 'createReactClass',
+      pragma: 'React',
+      fragment: 'Fragment',
+      version: 'detect',
+      flowVersion: '0.53',
+    },
+    propWrapperFunctions: [
+      'forbidExtraProps',
+      { property: 'freeze', object: 'Object' },
+      { property: 'myFavoriteWrapper' },
+    ],
+    linkComponents: [
+      'Hyperlink',
+      { name: 'Link', linkAttribute: 'to' },
+    ],
     'import/ignore': [
       'node_modules',
     ],
