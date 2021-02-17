@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import './App.css'
 // import Hello from './components/Hello'
 // import Welcome from './components/Welcome'
+import Clock from './components/Clock'
 import Header from './components/Header'
 import List from './components/List'
 import Footer from './components/Footer'
@@ -86,6 +87,9 @@ export default class App extends Component {
       //   <Welcome />
       // </div>
       <div className="todo-container">
+        <div>
+          <Clock />
+        </div>
         <div className="todo-wrap">
           <Header addTodo={this.addTodo} />
           <List todos={todos} updateTodo={this.updateTodo} deleteTodo={this.deleteTodo} />
