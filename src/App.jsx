@@ -7,6 +7,7 @@ import Clock from './components/Clock'
 import Header from './components/Header'
 import List from './components/List'
 import Footer from './components/Footer'
+import Calculator from './components/Calculator'
 
 // 创建并暴露App组件
 export default class App extends Component {
@@ -89,6 +90,9 @@ export default class App extends Component {
       <div className="todo-container">
         <div>
           <Clock />
+        </div>
+        <div>
+          <Calculator />
         </div>
         <div className="todo-wrap">
           <Header addTodo={this.addTodo} />

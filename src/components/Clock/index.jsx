@@ -1,6 +1,13 @@
 import React, { Component } from 'react'
 
 export default class Clock extends Component {
+  // 构造函数，给this.state赋初值
+  // constructor(props) {
+  //   super(props)
+  //   this.state = { date: new Date() }
+  // }
+
+  // 也可以不写构造函数，给state赋初值
   state = {
     date: new Date(),
   }
